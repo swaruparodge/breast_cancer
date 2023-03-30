@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<style>
+    .button{
+        background-color: rgb(217, 57, 57);
+        border: 2px rgb(96, 182, 244);
+        color:blanchedalmond;
+        padding: 0.7em 0.7em;
+        text-align:center;
+        text-decoration: aqua;
+        font-size: 1em;
+        display: inline-block;
+        width: 18%;
+        border-radius: 5px;
+        box-shadow: 3px 3px 8px 0 #960d0d;
+
+    }
+
+   body {
+  background-image: url("{{url_for('static', filename='cancer.jpg')}}");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+    
+
+    h1{
+        background-color: rgb(231, 45, 58);
+        font-size: 3em;
+        color:rgb(12, 10, 0);
+        display: block
+        
+    }
+
+
+    label{
+        
+        border: 2px rgb(99, 51, 9);
+        color:rgb(12, 12, 12);
+        text-align:center;
+        text-decoration: aqua;
+        font-size: 1em;
+        display: inline-block;
+        width: 18%;
+        border-radius: 5px;
+        
+          
+    }
+</style>
+</head>
+
+<body>
+    
+<center>
+    <div class="login"> 
+    <h1> BreastCancer Predictive Analysis </h1>
+    
+       			
+
+        <form action="{{url_for('predict')}}"method="POST">
+
+        <label> <b> radius_mean</label><br>
+        <input  type="number" name="radius_mean" placeholder=" radius_mean" required="required"/><br><br>
+
+        <label>volatile acidity</label><br>
+        <input type="number" name="texture_mean" placeholder="texture_mean" required="required"/><br><br>
+
+        <label>perimeter_mean</label><br>
+        <input type="number" name="perimeter_mean" placeholder="perimeter_mean" required="required"/><br><br>
+
+        <label>area_mean</label><br>
+        <input type="number" name="area_mean" placeholder="area_mean" required="required"/><br><br>
+
+        <label>smoothness_mean</label><br>
+        <input type="number" name="smoothness_mean" placeholder="smoothness_mean" required="required"/><br><br>
+
+        <label>total compactness_mean</label><br>
+        <input type="number" name="compactness_mean" placeholder="compactness_mean" required="required"/><br><br>
+
+        <label>concavity_mean</label><br>
+        <input type="number" name="concavity_mean" placeholder="concavity_mean" required="required"/><br><br>
+
+        <label>concave points_mean</label><br>
+        <input type="number" name="concave points_mean" placeholder="concave points_mean" required="required"/><br><br>
+
+        <label>symmetry_mean</label><br>
+        <input type="number" name="symmetry_mean" placeholder="symmetry_mean" required="required"/><br><br>
+
+        <label>fractal_dimension_mean</label><br>
+        <input type="number" name="fractal_dimension_mean" placeholder="fractal_dimension_mean" required="required"/><br><br>
+        
+        <label>radius_se</label><br>
+        <input type="number" name="radius_se" placeholder="radius_se" required="required"/><br><br>
+
+        <label>texture_se</label><br>
+        <input type="number" name="texture_se" placeholder="texture_se" required="required"/><br><br>
+
+        <label>perimeter_se</label><br>
+        <input type="number" name="perimeter_se" placeholder="perimeter_se" required="required"/><br><br>
+
+        <label>area_se</label><br>
+        <input type="number" name="area_se" placeholder="area_se" required="required"/><br><br>
+
+        <label>smoothness_se</label><br>
+        <input type="number" name="smoothness_se" placeholder="smoothness_se" required="required"/><br><br>
+
+        <label>compactness_se</label><br>
+        <input type="number" name="compactness_se" placeholder="compactness_se" required="required"/><br><br>
+
+        <label>concavity_se</label><br>
+        <input type="number" name="concavity_se" placeholder="concavity_se" required="required"/><br><br>
+
+        <label>concave points_se</label><br>
+        <input type="number" name="concave points_se" placeholder="concave points_se" required="required"/><br><br>
+
+        <label>symmetry_se</label><br>
+        <input type="number" name="symmetry_se" placeholder="symmetry_se" required="required"/><br><br>
+
+        <label>fractal_dimension_se</label><br>
+        <input type="number" name="fractal_dimension_se" placeholder="fractal_dimension_se" required="required"/><br><br>
+
+        <label>radius_worst</label><br>
+        <input type="number" name="radius_worst" placeholder="radius_worst" required="required"/><br><br>
+
+        <label>texture_worst</label><br>
+        <input type="number" name="texture_worst" placeholder="texture_worst" required="required"/><br><br>
+
+        <label>perimeter_worst</label><br>
+        <input type="number" name="perimeter_worst" placeholder="perimeter_worst" required="required"/><br><br>
+
+        <label>area_worst</label><br>
+        <input type="number" name="area_worst" placeholder="area_worst" required="required"/><br><br>
+
+        <label>smoothness_worst</label><br>
+        <input type="number" name="smoothness_worst" placeholder="smoothness_worst" required="required"/><br><br>
+
+        <label>compactness_worst</label><br>
+        <input type="number" name="compactness_worst" placeholder="compactness_worst" required="required"/><br><br>
+
+        <label>concavity_worst</label><br>
+        <input type="number" name="concavity_worst" placeholder="concavity_worst" required="required"/><br><br>
+
+        <label>concave points_worst</label><br>
+        <input type="number" name="concave points_worst" placeholder="concave points_worst" required="required"/><br><br>
+
+        <label>symmetry_worst</label><br>
+        <input type="number" name="symmetry_worst" placeholder="symmetry_worst" required="required"/><br><br>
+
+        <label>fractal_dimension_worst</label><br>
+        <input type="number" name="fractal_dimension_worst" placeholder="fractal_dimension_worst" required="required"/><br><br>
+
+
+        <input type="submit" class="button"> Predict Quality </button><br><br>
+        </form>
+
+
+
+
+    </div>  
+</center>
+
+</body>
+</html>
